@@ -1,1 +1,177 @@
-
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Sistema Escolar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1e5799 0%,#2989d8 50%,#207cca 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .login-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        .login-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .login-header h1 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+        
+        .login-header p {
+            color: #7f8c8d;
+            font-size: 16px;
+        }
+        
+        .login-form .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .login-form label {
+            display: block;
+            margin-bottom: 8px;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        .login-form input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        .login-form input:focus {
+            border-color: #2989d8;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(41, 137, 216, 0.2);
+        }
+        
+        .user-type {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .user-option {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .user-option input {
+            display: none;
+        }
+        
+        .user-option label {
+            display: block;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .user-option input:checked + label {
+            background-color: #2989d8;
+            color: white;
+            border-color: #2989d8;
+        }
+        
+        .login-button {
+            width: 100%;
+            padding: 12px;
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .login-button:hover {
+            background-color: #1a252f;
+        }
+        
+        .login-footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+        
+        .login-footer a {
+            color: #2989d8;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .login-footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <h1>Acesso Escolar</h1>
+            <p>Selecione seu perfil e faça login</p>
+        </div>
+        
+        <form class="login-form">
+            <div class="user-type">
+                <div class="user-option">
+                    <input type="radio" id="student" name="user_type" value="student" checked>
+                    <label for="student">Aluno</label>
+                </div>
+                <div class="user-option">
+                    <input type="radio" id="teacher" name="user_type" value="teacher">
+                    <label for="teacher">Professor</label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="username">Matrícula</label>
+                <input type="text" id="username" name="username" placeholder="Digite sua matrícula" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+            </div>
+            
+            <button type="submit" class="login-button">Entrar</button>
+        </form>
+        
+        <div class="login-footer">
+            <p>Problemas para acessar? <a href="#">Fale com a secretaria</a></p>
+        </div>
+    </div>
+</body>
+</html>
